@@ -1,0 +1,322 @@
+{
+  "domain": "jin-opera-archive",
+  "version": 2,
+  "sample_id": "sample-012",
+  "facts": [
+    "资料覆盖山西三十八个戏曲剧种",
+    "影像同时记录台前与幕后",
+    "每幅影像需要配套源流、人物与来源资料",
+    "原件影像封存后只允许衍生副本，编辑稿不得替换原件",
+    "事实更正须附来源并取得相应专家签署",
+    "展览、出版、研究下载、青少年传播分别执行各自授权范围"
+  ],
+  "experts": [
+    { "id": "E01", "name": "王铭", "title": "戏曲史研究员" },
+    { "id": "E02", "name": "李春笙", "title": "副研究馆员（非遗档案）" },
+    { "id": "E03", "name": "赵川", "title": "编审（地方戏曲音乐）" }
+  ],
+  "opera_genres": [
+    { "id": "G001", "name": "蒲州梆子", "aliases": ["蒲剧", "蒲州梆子戏"], "included_in_38": true, "origin": { "text": "形成于蒲州（今永济一带），明中后期已见记载，为山西梆子声腔源头之一。", "certainty": "established", "source_ids": ["S004"] } },
+    { "id": "G002", "name": "中路梆子", "aliases": ["晋剧", "太原梆子"], "included_in_38": true, "origin": { "text": "清代由蒲州梆子北上结合中路方言音调演变，成型于晋中、太原一带。", "certainty": "established", "source_ids": ["S004"] } },
+    { "id": "G003", "name": "北路梆子", "aliases": ["上路调"], "included_in_38": true, "origin": { "text": "蒲州梆子流布晋北后形成，活动于忻州、大同一线。", "certainty": "established", "source_ids": ["S004"] } },
+    { "id": "G004", "name": "上党梆子", "aliases": ["上党宫调", "东路戏"], "included_in_38": true, "origin": { "text": "形成于晋东南上党地区，清代融合昆、梆、罗、卷、黄五种声腔。", "certainty": "established", "source_ids": ["S004"] } },
+    { "id": "G005", "name": "上党落子", "aliases": ["黎城落子"], "included_in_38": true, "origin": { "text": "清代道光年间由河北落子传入上党后本地化形成。", "certainty": "established" } },
+    { "id": "G006", "name": "眉户", "aliases": ["晋南眉户", "迷胡"], "included_in_38": true, "origin": { "text": "一说源自晋南民间小曲，一说由陕西华阴、华县一带传入后本土化，两说均有曲调内证。", "certainty": "contested", "source_ids": ["S004"] }, "note": "源流两说并列，审定不采定一说。" },
+    { "id": "G007", "name": "上党二簧", "aliases": ["上党皮簧"], "included_in_38": true, "origin": { "text": "清代由徽汉二簧路子传入上党地区，与上党梆子同台共生。", "certainty": "established" } },
+    { "id": "G008", "name": "耍孩儿", "aliases": ["咳咳腔"], "included_in_38": true, "origin": { "text": "流布于大同、怀仁、应县一带，以咳腔衬字得名，形成年代无可靠记载。", "certainty": "unknown" } },
+    { "id": "G009", "name": "灵丘罗罗腔", "aliases": ["罗罗腔"], "included_in_38": true, "origin": { "text": "清代由外地罗罗腔传至灵丘一带本地化，曾与北路梆子合班。", "certainty": "established" } },
+    { "id": "G010", "name": "孝义碗碗腔", "aliases": ["碗碗腔"], "included_in_38": true, "origin": { "text": "原为皮影说唱，清末以来在孝义逐步由影戏登台为真人扮演。", "certainty": "established" } },
+    { "id": "G011", "name": "曲沃碗碗腔", "included_in_38": true, "origin": { "text": "碗碗腔流布晋南曲沃一路的支派，与孝义碗碗腔同源异流。", "certainty": "established" } },
+    { "id": "G012", "name": "孝义皮腔", "aliases": ["纸窗腔"], "included_in_38": true, "origin": { "text": "孝义本地皮影戏唱腔，因以纸窗亮影得名，形成年代无考。", "certainty": "unknown" } },
+    { "id": "G013", "name": "锣鼓杂戏", "aliases": ["铙鼓杂戏", "杂戏"], "included_in_38": true, "origin": { "text": "流传于临猗一带农村的仪式性戏剧，以锣鼓伴奏、无弦索，被视为古老戏剧遗存。", "certainty": "established", "source_ids": ["S004"] } },
+    { "id": "G014", "name": "晋北道情", "aliases": ["神池道情", "右玉道情"], "included_in_38": true, "origin": { "text": "由道情说唱在晋北登台演化，神池、右玉各有路数。", "certainty": "established" } },
+    { "id": "G015", "name": "临县道情", "included_in_38": true, "origin": { "text": "道情流布吕梁临县一路，与当地民歌、法事音乐结合而成。", "certainty": "established" } },
+    { "id": "G016", "name": "洪洞道情", "included_in_38": true, "origin": { "text": "道情流布晋南洪洞一路的支派。", "certainty": "established" } },
+    { "id": "G017", "name": "河曲二人台", "aliases": ["二人台"], "included_in_38": true, "origin": { "text": "晋、陕、蒙交界小曲小戏在河曲一带成型，蒙汉曲调并存。", "certainty": "established" } },
+    { "id": "G018", "name": "左权小花戏", "aliases": ["小花戏"], "included_in_38": true, "origin": { "text": "由左权社火歌舞逐步扮演故事而成。", "certainty": "established" } },
+    { "id": "G019", "name": "祁太秧歌", "aliases": ["晋中秧歌", "太谷秧歌"], "included_in_38": true, "origin": { "text": "祁县、太谷一带民间小调发展为戏曲形态，清代已盛。", "certainty": "established" } },
+    { "id": "G020", "name": "太原秧歌", "included_in_38": true, "origin": { "text": "太原城郊秧歌登台扮演形成的小剧种。", "certainty": "established" } },
+    { "id": "G021", "name": "襄武秧歌", "included_in_38": true, "origin": { "text": "襄垣、武乡秧歌合流而成的上党地区秧歌戏。", "certainty": "established" } },
+    { "id": "G022", "name": "壶关秧歌", "included_in_38": true, "origin": { "text": "壶关一带干板秧歌发展为舞台小戏。", "certainty": "established" } },
+    { "id": "G023", "name": "泽州秧歌", "included_in_38": true, "origin": { "text": "古泽州（今晋城一带）的板腔体秧歌戏。", "certainty": "established" } },
+    { "id": "G024", "name": "汾孝秧歌", "included_in_38": true, "origin": { "text": "汾阳、孝义一带秧歌戏曲化形成。", "certainty": "established" } },
+    { "id": "G025", "name": "朔县大秧歌", "aliases": ["朔县秧歌"], "included_in_38": true, "origin": { "text": "朔州一带大戏路子秧歌，兼受北路梆子影响。", "certainty": "established" } },
+    { "id": "G026", "name": "广灵秧歌", "included_in_38": true, "origin": { "text": "广灵及晋冀交界一带的秧歌戏，与河北西路秧歌互有交流。", "certainty": "established" } },
+    { "id": "G027", "name": "沁源秧歌", "included_in_38": true, "origin": { "text": "沁源山区民歌小调经扮演化而成。", "certainty": "unknown" } },
+    { "id": "G028", "name": "凤台小戏", "included_in_38": true, "origin": { "text": "和顺县凤台村一带的民间小戏，清末已有演出记录。", "certainty": "established" } },
+    { "id": "G029", "name": "平陆高调", "included_in_38": true, "origin": { "text": "平陆黄河沿岸的高腔小戏，形成年代无考。", "certainty": "unknown" } },
+    { "id": "G030", "name": "浮山乐乐腔", "aliases": ["乐乐腔"], "included_in_38": true, "origin": { "text": "浮山地方小戏，以伴奏和腔形态得名，源流缺文献佐证。", "certainty": "unknown" } },
+    { "id": "G031", "name": "河东线腔", "aliases": ["线腔戏"], "included_in_38": true, "origin": { "text": "晋南黄河沿岸提线木偶唱腔，后亦有真人扮演。", "certainty": "established" } },
+    { "id": "G032", "name": "芮城扬高戏", "aliases": ["扬高戏", "秧歌戏?"], "included_in_38": true, "origin": { "text": "芮城黄河滩一带地方小戏，名称来源有登高演唱与扬调高腔两说。", "certainty": "contested" } },
+    { "id": "G033", "name": "夏县蛤蟆嗡", "aliases": ["蛤蟆嗡"], "included_in_38": true, "origin": { "text": "夏县小戏，因主奏琴头似蛙、声如蛙鸣得名，形成年代无考。", "certainty": "unknown" } },
+    { "id": "G034", "name": "万荣清戏", "aliases": ["清戏"], "included_in_38": true, "origin": { "text": "万荣一带高腔系古老剧种，或与明清青阳腔遗响有关。", "certainty": "contested" } },
+    { "id": "G035", "name": "弦儿戏", "included_in_38": true, "origin": { "text": "晋南以弦索伴奏的地方小戏，流布范围很小，形成年代无考。", "certainty": "unknown" } },
+    { "id": "G036", "name": "赛戏", "aliases": ["赛赛"], "included_in_38": true, "origin": { "text": "晋北祭祀赛社演出的仪式戏，与傩戏的源流关系尚有争议。", "certainty": "contested", "source_ids": ["S004"] }, "note": "FC002 提出过源流更正，尚未获专家签署。" },
+    { "id": "G037", "name": "繁峙蹦蹦", "aliases": ["蹦蹦戏"], "included_in_38": true, "origin": { "text": "繁峙一带说唱蹦蹦登台形成的小戏。", "certainty": "unknown" } },
+    { "id": "G038", "name": "翼城琴剧", "included_in_38": true, "origin": { "text": "由翼城琴书等说唱形式发展而成的年轻剧种，1980年代前后定名。", "certainty": "established" } }
+  ],
+  "persons": [
+    {
+      "id": "P001",
+      "canonical_name": "高启旺",
+      "name_variants": [
+        { "name": "高起旺", "variant_type": "同音异写", "source_ids": ["S002"], "note": "1998年田野笔记听音记字，后据家簿与戏账用字改为启。" },
+        { "name": "二疙瘩", "variant_type": "艺名", "source_ids": ["S001", "S003"] }
+      ],
+      "birth_year": { "value": 1931, "status": "confirmed", "source_ids": ["S003", "S005"] },
+      "troupe_ids": ["T001"],
+      "identity_disputes": [
+        {
+          "id": "D001",
+          "summary": "1998年4月所摄《三战吕布》照片中扮吕布者，家属称为高启旺，而戏班戏账同年演出记名疑为高怀玉，两说未决。",
+          "claims": [
+            { "claim": "画中人为高启旺（艺名二疙瘩），时年六十七岁。", "source_ids": ["S001"], "informant_person_id": "P003" },
+            { "claim": "画中人为高怀玉（艺名盖晋南），1998年春该角由高怀玉顶替。", "source_ids": ["S003"] }
+          ],
+          "status": "unresolved"
+        }
+      ]
+    },
+    {
+      "id": "P002",
+      "canonical_name": "高怀玉",
+      "name_variants": [
+        { "name": "盖晋南", "variant_type": "艺名", "source_ids": ["S003"] }
+      ],
+      "troupe_ids": ["T001"],
+      "identity_disputes": []
+    },
+    {
+      "id": "P003",
+      "canonical_name": "高建国",
+      "name_variants": [],
+      "troupe_ids": [],
+      "identity_disputes": []
+    },
+    {
+      "id": "P004",
+      "canonical_name": "张存财",
+      "name_variants": [
+        { "name": "张存才", "variant_type": "同音异写", "source_ids": ["S004"] },
+        { "name": "十三红", "variant_type": "艺名", "source_ids": ["S003"] }
+      ],
+      "birth_year": { "value": "约1925", "status": "approximate", "source_ids": ["S005"] },
+      "troupe_ids": ["T001"],
+      "identity_disputes": []
+    },
+    {
+      "id": "P005",
+      "canonical_name": "十三红",
+      "name_variants": [],
+      "troupe_ids": ["T001"],
+      "identity_disputes": [],
+      "note": "仅见于戏单与口述的艺名记录，已据 M002 归并到张存财（P004），记录保留不归并删除。"
+    },
+    {
+      "id": "P006",
+      "canonical_name": "张巧娥",
+      "name_variants": [],
+      "troupe_ids": [],
+      "identity_disputes": []
+    }
+  ],
+  "troupes": [
+    { "id": "T001", "name": "高家埝杂戏子弟班", "aliases": ["子弟班"], "active_period": "约1920年代—1990年代", "place_ids": ["L002", "L001"], "note": "村民业余性质，腊月排演、正月赛社出演。" },
+    { "id": "T002", "name": "临晋镇蒲剧自乐班", "aliases": ["自乐班"], "active_period": "1980年代至今", "place_ids": ["L001"] }
+  ],
+  "places": [
+    { "id": "L001", "name": "临猗县", "place_type": "县" },
+    { "id": "L002", "name": "高家埝村", "place_type": "村", "note": "村名为虚构样例名。" },
+    { "id": "L003", "name": "关帝庙戏台", "place_type": "戏台", "note": "位于高家埝村，1998年演出场地；戏台题记见 S007。" },
+    { "id": "L004", "name": "平遥县", "place_type": "县" },
+    { "id": "L005", "name": "神池县", "place_type": "县" },
+    { "id": "L006", "name": "大同市", "place_type": "城市" }
+  ],
+  "repertoires": [
+    { "id": "R001", "title": "三战吕布", "aliases": ["虎牢关"], "genre_ids": ["G013"], "source_ids": ["S003"] },
+    { "id": "R002", "title": "打金枝", "genre_ids": ["G002"], "source_ids": ["S004"] },
+    { "id": "R003", "title": "挂画", "genre_ids": ["G001"], "source_ids": ["S004"] }
+  ],
+  "shoot_batches": [
+    { "id": "B1998-04", "date_or_period": "1998-04（农历正月赛社期间）", "place_id": "L002", "photographer": "项目采风组", "note": "锣鼓杂戏现场，含台前与扮戏后台。" },
+    { "id": "B2005-10", "date_or_period": "2005-10-12 至 2005-10-14", "place_id": "L001", "photographer": "项目采风组", "note": "回访并补摄艺人、家属访谈。" },
+    { "id": "B2019-06", "date_or_period": "2019-06-18", "place_id": "L003", "photographer": "项目采风组", "note": "戏台现状与题记拍摄。" }
+  ],
+  "sources": [
+    { "id": "S001", "kind": "口述", "date": "2005-10-12", "title": "高建国谈祖父高启旺从艺及1998年演出", "informant_person_id": "P003", "interviewer": "项目采风组", "reliability_note": "家属回忆，时间细节可能有后视偏差。" },
+    { "id": "S002", "kind": "田野笔记", "date": "1998-04", "title": "1998年高家埝锣鼓杂戏赛社演出田野笔记", "interviewer": "项目采风组", "reliability_note": "现场速记，人名多为听音记字。" },
+    { "id": "S003", "kind": "戏班账册", "date": "1947年抄本（2005年翻拍）", "title": "高家埝杂戏子弟班戏账", "citation": "村民家藏抄本，现由家属保管", "reliability_note": "历年演出角色、戏码记名，个别年份字迹漫漶。" },
+    { "id": "S004", "kind": "出版物", "date": "1987", "title": "临猗县戏曲资料本（内部资料）", "reliability_note": "县志系统内部资料本，个别条目转抄口碑。" },
+    { "id": "S005", "kind": "口述", "date": "2019-06-18", "title": "张巧娥谈张存财生年与艺名由来", "informant_person_id": "P006", "interviewer": "项目采风组" },
+    { "id": "S006", "kind": "影像内证", "date": "1998-04", "title": "IMG-0001 与 IMG-0002 同卷底片连续性比对", "reliability_note": "两张为同一胶卷相邻片幅，机位、装扮连续。" },
+    { "id": "S007", "kind": "官方档案", "date": "2009（第三次全国文物普查记录）", "title": "高家埝关帝庙戏台题记普查记录" }
+  ],
+  "images": [
+    {
+      "id": "IMG-0001",
+      "original_file": "originals/1998/B1998-04/IMG-0001.tif",
+      "sha256": "9f2c1a7e4b6d48a0c3f5e7216d8b9a0e1f24c36a8b5d7091ce4f2a6b8d035e7c",
+      "batch_id": "B1998-04",
+      "depicts": { "person_ids": ["P001"], "repertoire_id": "R001", "role": "吕布", "stage": "台前", "identification_status": "disputed" },
+      "permission_id": "PERM-01",
+      "derivatives": [
+        { "id": "D001", "file": "derivatives/2021/IMG-0001_web.jpg", "purpose": "官网与展览目录预览", "edited": false, "replaces_original": false },
+        { "id": "D002", "file": "derivatives/2021/IMG-0001_exhibit_graded.tif", "purpose": "展陈校色输出件", "edited": true, "replaces_original": false, "note": "仅做色温与密度校正，未改动画面内容。" },
+        { "id": "D003", "file": "derivatives/2021/IMG-0001_youth_wm.jpg", "purpose": "青少年传播打水印副本", "edited": true, "replaces_original": false, "note": "按 PERM-01 v2 限制加注馆方水印。" }
+      ],
+      "note": "身份争议 D001 未决，发布文字必须保留存疑说明。"
+    },
+    {
+      "id": "IMG-0002",
+      "original_file": "originals/1998/B1998-04/IMG-0002.tif",
+      "sha256": "2a8f0e9d61c74b3586fe0d4c9b1a72e3f5086c94d2b7ae1305f8c4697d21b0fa",
+      "batch_id": "B1998-04",
+      "depicts": { "person_ids": ["P001"], "repertoire_id": "R001", "role": "吕布", "stage": "台前", "identification_status": "disputed" },
+      "permission_id": "PERM-01",
+      "derivatives": [],
+      "merged_into": "IMG-0001",
+      "note": "与 IMG-0001 为同卷相邻底片，按 M001 归并；原件仍独立封存。"
+    },
+    {
+      "id": "IMG-0003",
+      "original_file": "originals/2005/B2005-10/IMG-0003.tif",
+      "sha256": "c41b7e0392a8d6f5e71904bca28df63159e07c4b8d16a3f29ce57086bd1423af",
+      "batch_id": "B2005-10",
+      "depicts": { "person_ids": ["P004"], "stage": "后台", "identification_status": "confirmed" },
+      "permission_id": "PERM-02",
+      "derivatives": [
+        { "id": "D004", "file": "derivatives/2020/IMG-0003_research.jpg", "purpose": "研究申请内网阅览件", "edited": false, "replaces_original": false }
+      ]
+    },
+    {
+      "id": "IMG-0004",
+      "original_file": "originals/2019/B2019-06/IMG-0004.tif",
+      "sha256": "7e5d91c40b3f68a2d9ce14705fb8263ae904c7d1b58f3260ae9c74d51b8f3e06",
+      "batch_id": "B2019-06",
+      "depicts": { "person_ids": [], "stage": "生活场景", "identification_status": "unidentified" },
+      "permission_id": "PERM-02",
+      "derivatives": []
+    }
+  ],
+  "permissions": [
+    {
+      "id": "PERM-01",
+      "licensor": { "name": "高建国", "relation_to_subject": "艺人高启旺之孙、家属代表" },
+      "current_version": 2,
+      "versions": [
+        { "version": 1, "granted_at": "2006-03-01", "scope": { "exhibition": true, "publication": true, "research_download": false, "youth": false }, "restrictions": ["不得用于商业广告", "不得裁切篡改画面内容"] },
+        { "version": 2, "granted_at": "2019-08-10", "scope": { "exhibition": true, "publication": true, "research_download": true, "youth": true }, "restrictions": ["研究下载仅限实名申请机构内网使用", "青少年传播须使用打水印副本", "不得用于商业广告"], "watermark_required": true }
+      ]
+    },
+    {
+      "id": "PERM-02",
+      "licensor": { "name": "张存财（本人访谈时口述同意，家属代签书面件）", "relation_to_subject": "艺人本人" },
+      "current_version": 1,
+      "versions": [
+        { "version": 1, "granted_at": "2006-03-02", "scope": { "exhibition": true, "publication": false, "research_download": true, "youth": false }, "restrictions": ["出版须另行取得书面同意"] }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "id": "C001",
+      "image_id": "IMG-0001",
+      "version": 1,
+      "status": "superseded",
+      "text": "1998年正月，高家埝锣鼓杂戏《三战吕布》演出，高起旺扮吕布。",
+      "source_ids": ["S002"],
+      "uncertainty": { "has_dispute": true, "dispute_ids": ["D001"], "public_note": "画中艺人身份有两说，尚在审定；人名“高起旺”为听音记字。" },
+      "approved_by": "E01",
+      "approved_at": "2007-02-10"
+    },
+    {
+      "id": "C003",
+      "image_id": "IMG-0001",
+      "version": 2,
+      "status": "approved",
+      "text": "1998年农历正月赛社期间，高家埝锣鼓杂戏《三战吕布》（G013）演出，扮吕布者一说为高启旺（艺名二疙瘩），一说为高怀玉（艺名盖晋南），尚无定论。",
+      "source_ids": ["S001", "S003", "S006"],
+      "uncertainty": { "has_dispute": true, "dispute_ids": ["D001"], "public_note": "画中艺人身份存在未决争议，本馆两说并列、不采定说；详见审定记录 D001。" },
+      "approved_by": "E01",
+      "approved_at": "2021-04-20"
+    },
+    {
+      "id": "C002",
+      "image_id": "IMG-0003",
+      "version": 1,
+      "status": "approved",
+      "text": "2005年10月，临猗县，张存财（艺名十三红）演出前在后台扮戏。",
+      "source_ids": ["S001", "S005"],
+      "uncertainty": { "has_dispute": false, "dispute_ids": [], "public_note": "" },
+      "approved_by": "E02",
+      "approved_at": "2020-11-05"
+    },
+    {
+      "id": "C004",
+      "image_id": "IMG-0004",
+      "version": 1,
+      "status": "approved",
+      "text": "2019年6月，高家埝关帝庙戏台台基现状。",
+      "source_ids": ["S007"],
+      "uncertainty": { "has_dispute": false, "dispute_ids": [], "public_note": "" },
+      "approved_by": "E02",
+      "approved_at": "2020-11-05"
+    }
+  ],
+  "fact_corrections": [
+    {
+      "id": "FC001",
+      "target": { "type": "person", "id": "P001", "field": "birth_year" },
+      "previous": "1929（据1998年田野笔记随口推算）",
+      "corrected": "1931",
+      "reason": "戏账所记民国三十五年（1946）“十五岁上场”与家属口述属相均可推得1931年，两源相合。",
+      "source_ids": ["S003", "S001"],
+      "status": "accepted",
+      "signoffs": [
+        { "expert_id": "E01", "signed_at": "2020-01-15", "statement": "戏账年龄记载与家属口述互证一致，同意更正为1931年；原1929年说法保留可溯。" }
+      ]
+    },
+    {
+      "id": "FC002",
+      "target": { "type": "opera_genre", "id": "G036", "field": "origin" },
+      "previous": "赛戏源于宋代宫廷傩礼，随移民北传晋北。",
+      "corrected": "赛戏为晋北本地赛社传统演剧，与宋宫傩礼的直接传承关系缺乏证据，宜改为本地社赛发生说。",
+      "reason": "内部资料本所据为晚清民国口碑，无更早文献；现存仪式结构更接近村社春祈秋报。",
+      "source_ids": ["S004"],
+      "status": "proposed",
+      "signoffs": []
+    }
+  ],
+  "merges": [
+    {
+      "id": "M001",
+      "kind": "duplicate_negative",
+      "members": ["IMG-0001", "IMG-0002"],
+      "retained_id": "IMG-0001",
+      "basis": "两图为同一胶卷相邻片幅（S006），机位、装扮、演出瞬间连续，判定为重复底片；保留 IMG-0001 为发布主件，IMG-0002 作副本留存，原件均继续独立封存。",
+      "source_ids": ["S006", "S002"],
+      "decided_by": "审定组（李春笙经办）",
+      "decided_at": "2020-01-20",
+      "reversibility_note": "归并仅建立指向，不删件；若影像内证被推翻可解除归并。"
+    },
+    {
+      "id": "M002",
+      "kind": "same_person_alias",
+      "members": ["P004", "P005"],
+      "retained_id": "P004",
+      "basis": "戏账（S003）中“十三红”与“张存财”在同年同班同行当互见，2019年家属口述（S005）确认十三红为其艺名，故将戏单上的艺名记录 P005 归并到本名 P004；P005 记录保留以备反查。",
+      "source_ids": ["S003", "S005"],
+      "decided_by": "审定组（王铭审定）",
+      "decided_at": "2020-02-02",
+      "reversibility_note": "与 D001 不同，本案有两种独立来源互证；若出现反证可拆分。"
+    }
+  ],
+  "audit_events": [
+    { "id": "A0001", "at": "2006-02-01", "actor": "档案组", "action": "原件封存登记", "target": "IMG-0001", "detail": "扫描件与底片分存，记录 sha256；此后任何处理只产出 derivatives 副本。" },
+    { "id": "A0002", "at": "2019-08-10", "actor": "高建国", "action": "许可升版", "target": "PERM-01", "detail": "v1→v2，新增研究下载与青少年传播授权，附加水印与内网限制。" },
+    { "id": "A0003", "at": "2020-01-15", "actor": "王铭（E01）", "action": "专家签署事实更正", "target": "FC001" },
+    { "id": "A0004", "at": "2020-01-20", "actor": "审定组", "action": "重复底片归并", "target": "M001" },
+    { "id": "A0005", "at": "2020-02-02", "actor": "审定组", "action": "同人异名归并", "target": "M002" },
+    { "id": "A0006", "at": "2021-05-01", "actor": "发布组", "action": "按渠道生成发布清单", "target": "发布清单 manifest-2021-05", "detail": "展览与出版渠道发布 IMG-0001，随附 C003 与 PERM-01 v2 标识及未决争议说明。" }
+  ]
+}

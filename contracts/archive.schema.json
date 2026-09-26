@@ -1,0 +1,405 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "晋戏影像史料审定档案",
+  "description": "二十多年田野影像的审定后台资料格式。原件影像、口述来源、身份争议、审定文字、许可版本与分渠道发布记录分层保存，互不覆盖。所有样例数据均为虚构。",
+  "type": "object",
+  "required": [
+    "domain",
+    "version",
+    "sample_id",
+    "facts",
+    "experts",
+    "opera_genres",
+    "persons",
+    "troupes",
+    "places",
+    "repertoires",
+    "shoot_batches",
+    "sources",
+    "images",
+    "permissions",
+    "captions",
+    "fact_corrections",
+    "merges",
+    "audit_events"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "domain": { "const": "jin-opera-archive" },
+    "version": { "type": "integer", "minimum": 2 },
+    "sample_id": { "type": "string", "minLength": 1 },
+    "facts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "experts": { "$ref": "#/$defs/experts" },
+    "opera_genres": {
+      "type": "array",
+      "minItems": 38,
+      "maxItems": 38,
+      "items": { "$ref": "#/$defs/opera_genre" }
+    },
+    "persons": { "type": "array", "items": { "$ref": "#/$defs/person" } },
+    "troupes": { "type": "array", "items": { "$ref": "#/$defs/troupe" } },
+    "places": { "type": "array", "items": { "$ref": "#/$defs/place" } },
+    "repertoires": { "type": "array", "items": { "$ref": "#/$defs/repertoire" } },
+    "shoot_batches": { "type": "array", "items": { "$ref": "#/$defs/shoot_batch" } },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+    "images": { "type": "array", "items": { "$ref": "#/$defs/image" } },
+    "permissions": { "type": "array", "items": { "$ref": "#/$defs/permission" } },
+    "captions": { "type": "array", "items": { "$ref": "#/$defs/caption" } },
+    "fact_corrections": { "type": "array", "items": { "$ref": "#/$defs/fact_correction" } },
+    "merges": { "type": "array", "items": { "$ref": "#/$defs/merge" } },
+    "audit_events": { "type": "array", "items": { "$ref": "#/$defs/audit_event" } }
+  },
+  "$defs": {
+    "source_ref": { "type": "string", "pattern": "^S[0-9]{3}$" },
+    "experts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^E[0-9]{2}$" },
+          "name": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "opera_genre": {
+      "type": "object",
+      "required": ["id", "name", "origin", "included_in_38"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^G[0-9]{3}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "included_in_38": { "const": true },
+        "origin": {
+          "type": "object",
+          "required": ["text", "certainty"],
+          "additionalProperties": false,
+          "properties": {
+            "text": { "type": "string", "minLength": 1 },
+            "certainty": { "enum": ["established", "contested", "unknown"] },
+            "source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } }
+          }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "person": {
+      "type": "object",
+      "required": ["id", "canonical_name", "name_variants", "identity_disputes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^P[0-9]{3}$" },
+        "canonical_name": { "type": "string", "minLength": 1 },
+        "name_variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "variant_type", "source_ids"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "variant_type": { "enum": ["艺名", "乳名", "同音异写", "误记", "曾用名"] },
+              "source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "birth_year": {
+          "type": "object",
+          "required": ["value", "status"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "description": "生年数值或区间，如 1931 或 \"约1930\"。" },
+            "status": { "enum": ["confirmed", "disputed", "approximate"] },
+            "source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } }
+          }
+        },
+        "troupe_ids": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" },
+        "identity_disputes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "summary", "claims", "status"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^D[0-9]{3}$" },
+              "summary": { "type": "string", "minLength": 1 },
+              "claims": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": ["claim", "source_ids"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "claim": { "type": "string", "minLength": 1 },
+                    "source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } },
+                    "informant_person_id": { "type": "string" }
+                  }
+                }
+              },
+              "status": { "enum": ["unresolved", "resolved"] },
+              "resolution_note": { "type": "string" },
+              "resolution_source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } }
+            }
+          }
+        }
+      }
+    },
+    "troupe": {
+      "type": "object",
+      "required": ["id", "name", "active_period"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^T[0-9]{3}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "active_period": { "type": "string" },
+        "place_ids": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "place": {
+      "type": "object",
+      "required": ["id", "name", "place_type"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^L[0-9]{3}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "place_type": { "enum": ["村", "乡镇", "县", "城市", "庙宇", "戏台", "自然地理"] },
+        "modern_name": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "repertoire": {
+      "type": "object",
+      "required": ["id", "title", "genre_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^R[0-9]{3}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "genre_ids": { "type": "array", "items": { "type": "string" } },
+        "source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } }
+      }
+    },
+    "shoot_batch": {
+      "type": "object",
+      "required": ["id", "date_or_period", "place_id"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^B[0-9]{4}-[0-9]{2}$" },
+        "date_or_period": { "type": "string", "minLength": 1 },
+        "place_id": { "type": "string" },
+        "photographer": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["id", "kind", "date", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^S[0-9]{3}$" },
+        "kind": { "enum": ["口述", "戏班账册", "官方档案", "出版物", "实物", "田野笔记", "影像内证"] },
+        "date": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "informant_person_id": { "type": "string" },
+        "interviewer": { "type": "string" },
+        "citation": { "type": "string" },
+        "reliability_note": { "type": "string" }
+      }
+    },
+    "image": {
+      "type": "object",
+      "description": "original_file 与 sha256 指向封存原件，任何编辑只能产出 derivatives 副本，不得回写原件。",
+      "required": ["id", "original_file", "sha256", "batch_id", "depicts", "permission_id", "derivatives"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^IMG-[0-9]{4}$" },
+        "original_file": { "type": "string", "pattern": "^originals/.+" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "batch_id": { "type": "string" },
+        "depicts": {
+          "type": "object",
+          "required": ["person_ids"],
+          "additionalProperties": false,
+          "properties": {
+            "person_ids": { "type": "array", "items": { "type": "string" } },
+            "repertoire_id": { "type": "string" },
+            "role": { "type": "string" },
+            "stage": { "enum": ["台前", "后台", "台上台下", "生活场景", "不详"] },
+            "identification_status": { "enum": ["confirmed", "disputed", "unidentified"] }
+          }
+        },
+        "permission_id": { "type": "string" },
+        "derivatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "file", "purpose", "edited"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^D[0-9]{3}$" },
+              "file": { "type": "string" },
+              "purpose": { "type": "string" },
+              "edited": { "type": "boolean" },
+              "replaces_original": { "const": false },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "merged_into": {
+          "type": "string",
+          "description": "若该影像作为重复底片被归并，指向保留影像的 id。"
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "permission": {
+      "type": "object",
+      "required": ["id", "licensor", "current_version", "versions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^PERM-[0-9]{2}$" },
+        "licensor": {
+          "type": "object",
+          "required": ["name", "relation_to_subject"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "relation_to_subject": { "type": "string", "minLength": 1 }
+          }
+        },
+        "current_version": { "type": "integer", "minimum": 1 },
+        "versions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["version", "granted_at", "scope"],
+            "additionalProperties": false,
+            "properties": {
+              "version": { "type": "integer", "minimum": 1 },
+              "granted_at": { "type": "string", "minLength": 1 },
+              "scope": {
+                "type": "object",
+                "required": ["exhibition", "publication", "research_download", "youth"],
+                "additionalProperties": false,
+                "properties": {
+                  "exhibition": { "type": "boolean" },
+                  "publication": { "type": "boolean" },
+                  "research_download": { "type": "boolean" },
+                  "youth": { "type": "boolean" }
+                }
+              },
+              "restrictions": { "type": "array", "items": { "type": "string" } },
+              "watermark_required": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "caption": {
+      "type": "object",
+      "description": "审定文字按版本保存；uncertainty 必须随发布文字一起出现，不得在发布时删除。",
+      "required": ["id", "image_id", "version", "status", "text", "source_ids", "uncertainty"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^C[0-9]{3}$" },
+        "image_id": { "type": "string" },
+        "version": { "type": "integer", "minimum": 1 },
+        "status": { "enum": ["draft", "approved", "superseded"] },
+        "text": { "type": "string", "minLength": 1 },
+        "source_ids": { "type": "array", "items": { "$ref": "#/$defs/source_ref" } },
+        "uncertainty": {
+          "type": "object",
+          "required": ["has_dispute", "dispute_ids", "public_note"],
+          "additionalProperties": false,
+          "properties": {
+            "has_dispute": { "type": "boolean" },
+            "dispute_ids": { "type": "array", "items": { "type": "string" } },
+            "public_note": { "type": "string" }
+          }
+        },
+        "approved_by": { "type": "string" },
+        "approved_at": { "type": "string" }
+      }
+    },
+    "fact_correction": {
+      "type": "object",
+      "description": "事实更正必须附来源；status=accepted 时必须有相应专家签署。",
+      "required": ["id", "target", "previous", "corrected", "reason", "source_ids", "status", "signoffs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^FC[0-9]{3}$" },
+        "target": {
+          "type": "object",
+          "required": ["type", "id", "field"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "enum": ["person", "opera_genre", "troupe", "place", "repertoire", "image"] },
+            "id": { "type": "string", "minLength": 1 },
+            "field": { "type": "string", "minLength": 1 }
+          }
+        },
+        "previous": { "description": "被更正的原说法，原样保留以备追溯。" },
+        "corrected": { "description": "更正后的说法。" },
+        "reason": { "type": "string", "minLength": 1 },
+        "source_ids": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source_ref" } },
+        "status": { "enum": ["proposed", "accepted", "rejected"] },
+        "signoffs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["expert_id", "signed_at", "statement"],
+            "additionalProperties": false,
+            "properties": {
+              "expert_id": { "type": "string" },
+              "signed_at": { "type": "string", "minLength": 1 },
+              "statement": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "merge": {
+      "type": "object",
+      "description": "重复底片、同人异名可以归并，但必须写明依据与来源；归并不删除成员记录，只建立指向。",
+      "required": ["id", "kind", "members", "retained_id", "basis", "source_ids", "decided_by", "decided_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^M[0-9]{3}$" },
+        "kind": { "enum": ["duplicate_negative", "same_person_alias"] },
+        "members": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+        "retained_id": { "type": "string", "minLength": 1 },
+        "basis": { "type": "string", "minLength": 1 },
+        "source_ids": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source_ref" } },
+        "decided_by": { "type": "string", "minLength": 1 },
+        "decided_at": { "type": "string", "minLength": 1 },
+        "reversibility_note": { "type": "string" }
+      }
+    },
+    "audit_event": {
+      "type": "object",
+      "required": ["id", "at", "actor", "action", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^A[0-9]{4}$" },
+        "at": { "type": "string", "minLength": 1 },
+        "actor": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "target": { "type": "string", "minLength": 1 },
+        "detail": { "type": "string" }
+      }
+    }
+  }
+}
