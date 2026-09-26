@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "晋戏影像史料审定资料",
+  "description": "fixtures/archive.sample.json 的结构约定：剧种、地点、戏班、剧目、专家、艺人、拍摄批次、影像（含说明文字与许可）与身份争议。装载入口为 src/archive/loader.js。",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "genres": { "type": "array", "items": { "$ref": "#/$defs/genre" } },
+    "locations": { "type": "array", "items": { "$ref": "#/$defs/location" } },
+    "troupes": { "type": "array", "items": { "$ref": "#/$defs/troupe" } },
+    "plays": { "type": "array", "items": { "$ref": "#/$defs/play" } },
+    "experts": { "type": "array", "items": { "$ref": "#/$defs/expert" } },
+    "artists": { "type": "array", "items": { "$ref": "#/$defs/artist" } },
+    "batches": { "type": "array", "items": { "$ref": "#/$defs/batch" } },
+    "images": { "type": "array", "items": { "$ref": "#/$defs/image" } },
+    "disputes": { "type": "array", "items": { "$ref": "#/$defs/dispute" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["ref"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "enum": ["oral", "document", "artifact"] },
+        "ref": { "type": "string", "minLength": 1 },
+        "note": { "type": "string" }
+      }
+    },
+    "genre": {
+      "type": "object",
+      "required": ["id", "name", "origin"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "origin": { "type": "string", "description": "源流说明" },
+        "region": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "location": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "kind": { "enum": ["city", "county", "venue", "village", "place"] },
+        "parentId": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "troupe": {
+      "type": "object",
+      "required": ["id", "name", "genreId"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "genreId": { "type": "string" },
+        "baseLocationId": { "type": "string" },
+        "activeFrom": { "type": "string" },
+        "activeTo": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "play": {
+      "type": "object",
+      "required": ["id", "genreId", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "genreId": { "type": "string" },
+        "title": { "type": "string" },
+        "altTitles": { "type": "array", "items": { "type": "string" } },
+        "synopsis": { "type": "string" }
+      }
+    },
+    "expert": {
+      "type": "object",
+      "required": ["id", "name", "specialties"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "specialties": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^(genre:|field:)" },
+          "description": "如 genre:g01、field:photo、field:all"
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "artistName": {
+      "type": "object",
+      "required": ["value", "kind", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["birth", "stage", "nickname", "misrecord", "alias"] },
+        "source": { "type": "string", "description": "该姓名的出处" }
+      }
+    },
+    "artist": {
+      "type": "object",
+      "required": ["id", "names", "genreIds"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "names": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/artistName" } },
+        "genreIds": { "type": "array", "items": { "type": "string" } },
+        "troupeIds": { "type": "array", "items": { "type": "string" } },
+        "birthYear": { "type": ["integer", "null"] },
+        "deathYear": { "type": ["integer", "null"] },
+        "bio": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "batch": {
+      "type": "object",
+      "required": ["id", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "shotAt": { "type": "string" },
+        "photographer": { "type": "string" },
+        "locationId": { "type": "string" },
+        "genreIds": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "captionSeed": {
+      "type": "object",
+      "required": ["text", "state"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "state": { "enum": ["draft", "released"] },
+        "uncertaintyNote": { "type": "string", "description": "随发布文字给出的存疑提示" },
+        "reviewedBy": { "type": "string", "description": "state 为 released 时必填，值为专家 id" },
+        "reviewNote": { "type": "string" }
+      }
+    },
+    "licenseSeed": {
+      "type": "object",
+      "required": ["scopes"],
+      "additionalProperties": false,
+      "properties": {
+        "scopes": {
+          "type": "object",
+          "required": ["exhibition", "publication", "research", "youth"],
+          "additionalProperties": false,
+          "properties": {
+            "exhibition": { "enum": ["allow", "conditional", "deny"] },
+            "publication": { "enum": ["allow", "conditional", "deny"] },
+            "research": { "enum": ["allow", "conditional", "deny"] },
+            "youth": { "enum": ["allow", "conditional", "deny"] }
+          }
+        },
+        "conditions": { "type": "object", "additionalProperties": { "type": "string" } },
+        "grantedBy": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "image": {
+      "type": "object",
+      "required": ["id", "batchId", "negativeNo", "scene", "original"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "batchId": { "type": "string" },
+        "negativeNo": { "type": "string" },
+        "capturedAt": { "type": "string" },
+        "scene": { "enum": ["stage", "backstage"] },
+        "subjects": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "artistIds": { "type": "array", "items": { "type": "string" } },
+            "playId": { "type": "string" },
+            "troupeId": { "type": "string" },
+            "locationId": { "type": "string" }
+          }
+        },
+        "original": {
+          "type": "object",
+          "required": ["fileRef", "hash"],
+          "additionalProperties": false,
+          "properties": {
+            "fileRef": { "type": "string" },
+            "hash": { "type": "string" },
+            "registeredAt": { "type": "string" }
+          },
+          "description": "原照片登记后冻结，编辑稿只能进入 derivatives"
+        },
+        "derivatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["kind", "fileRef"],
+            "additionalProperties": false,
+            "properties": {
+              "kind": { "type": "string" },
+              "fileRef": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "captions": { "type": "array", "items": { "$ref": "#/$defs/captionSeed" } },
+        "license": { "$ref": "#/$defs/licenseSeed" },
+        "note": { "type": "string" }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": ["text", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "source": { "$ref": "#/$defs/source" }
+      }
+    },
+    "dispute": {
+      "type": "object",
+      "required": ["id", "subjectType", "subjectId", "topic", "claims"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "subjectType": { "enum": ["artist", "image"] },
+        "subjectId": { "type": "string" },
+        "topic": { "type": "string" },
+        "note": { "type": "string" },
+        "claims": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/claim" } }
+      }
+    }
+  }
+}

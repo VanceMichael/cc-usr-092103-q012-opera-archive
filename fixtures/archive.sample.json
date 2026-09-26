@@ -1,0 +1,222 @@
+{
+  "genres": [
+    { "id": "g01", "name": "晋剧", "origin": "又称中路梆子，源于蒲州梆子，清中叶在晋中盆地成形", "region": "晋中" },
+    { "id": "g02", "name": "蒲剧", "origin": "又称蒲州梆子，源于晋南古蒲州，山西最古老的梆子腔之一", "region": "晋南" },
+    { "id": "g03", "name": "上党梆子", "origin": "流行于古上党地区，梆子腔与罗罗腔、卷戏等并存", "region": "晋东南" },
+    { "id": "g04", "name": "北路梆子", "origin": "蒲剧北传后与晋北方言、民间音乐结合而成", "region": "晋北" },
+    { "id": "g05", "name": "眉户", "origin": "源于陕西眉县、户县一带曲子，传入山西后地方化", "region": "晋南、晋中" },
+    { "id": "g06", "name": "碗碗腔", "origin": "源于皮影戏唱腔，以铜碗击节得名", "region": "晋南、晋中" },
+    { "id": "g07", "name": "二人台", "origin": "源于晋西北民歌坐腔，蒙汉艺术交融", "region": "晋西北" },
+    { "id": "g08", "name": "耍孩儿", "origin": "源于雁北，唱腔以咳腔著称", "region": "晋北" },
+    { "id": "g09", "name": "罗罗腔", "origin": "古老腔调，流行于晋北及上党地区", "region": "晋北" },
+    { "id": "g10", "name": "弦子腔", "origin": "以弦索伴奏得名，流行于晋中一带", "region": "晋中" },
+    { "id": "g11", "name": "上党落子", "origin": "源于上党民间歌舞，后受梆子腔影响", "region": "晋东南" },
+    { "id": "g12", "name": "线腔", "origin": "源于芮城一带提线木偶戏唱腔", "region": "晋南" },
+    { "id": "g13", "name": "祁太秧歌", "origin": "源于祁县、太谷民间秧歌", "region": "晋中" },
+    { "id": "g14", "name": "太原秧歌", "origin": "流行于太原近郊的秧歌小戏", "region": "太原" },
+    { "id": "g15", "name": "介休干调秧歌", "origin": "介休一带不伴丝弦的秧歌", "region": "晋中" },
+    { "id": "g16", "name": "汾孝秧歌", "origin": "汾阳、孝义一带秧歌", "region": "晋中" },
+    { "id": "g17", "name": "壶关秧歌", "origin": "壶关县一带秧歌", "region": "晋东南" },
+    { "id": "g18", "name": "沁源秧歌", "origin": "沁源县一带秧歌", "region": "晋东南" },
+    { "id": "g19", "name": "襄武秧歌", "origin": "襄垣、武乡一带秧歌", "region": "晋东南" },
+    { "id": "g20", "name": "繁峙秧歌", "origin": "繁峙县一带秧歌", "region": "晋北" },
+    { "id": "g21", "name": "朔县秧歌", "origin": "朔州一带秧歌", "region": "晋北" },
+    { "id": "g22", "name": "广灵秧歌", "origin": "广灵县一带秧歌", "region": "晋北" },
+    { "id": "g23", "name": "平陆花鼓戏", "origin": "源于平陆民间花鼓", "region": "晋南" },
+    { "id": "g24", "name": "左权小花戏", "origin": "源于左权民歌与民间歌舞", "region": "晋中" },
+    { "id": "g25", "name": "凤台小戏", "origin": "源于和顺凤台一带民间小戏", "region": "晋中" },
+    { "id": "g26", "name": "晋南道情", "origin": "源于道情说唱，流行于晋南", "region": "晋南" },
+    { "id": "g27", "name": "晋北道情", "origin": "流行于晋北的道情戏", "region": "晋北" },
+    { "id": "g28", "name": "洪洞道情", "origin": "洪洞一带道情", "region": "晋南" },
+    { "id": "g29", "name": "临县道情", "origin": "临县一带道情", "region": "晋西" },
+    { "id": "g30", "name": "孝义皮影戏", "origin": "孝义皮影，碗碗腔与皮腔并用", "region": "晋中" },
+    { "id": "g31", "name": "侯马皮影戏", "origin": "侯马一带皮影戏", "region": "晋南" },
+    { "id": "g32", "name": "孝义木偶戏", "origin": "孝义杖头木偶戏", "region": "晋中" },
+    { "id": "g33", "name": "赛戏", "origin": "源于赛社祭祀的古老戏剧形态", "region": "晋南、晋东南" },
+    { "id": "g34", "name": "锣鼓杂戏", "origin": "源于晋南，以锣鼓伴奏、不用丝弦", "region": "晋南" },
+    { "id": "g35", "name": "队戏", "origin": "源于上党赛社中的队戏演出", "region": "晋东南" },
+    { "id": "g36", "name": "蛤蟆嗡", "origin": "流行于夏县一带的小戏，主奏乐器俗称蛤蟆嗡", "region": "晋南" },
+    { "id": "g37", "name": "扬高戏", "origin": "流行于运城一带的民间小戏", "region": "晋南" },
+    { "id": "g38", "name": "清戏", "origin": "流行于晋东南高平一带的古老剧种", "region": "晋东南" }
+  ],
+  "locations": [
+    { "id": "loc-jinzhong", "name": "晋中市", "kind": "city" },
+    { "id": "loc-xinzhou", "name": "忻州市", "kind": "city" },
+    { "id": "loc-taigu", "name": "太谷县", "kind": "county", "parentId": "loc-jinzhong" },
+    { "id": "loc-qixian", "name": "祁县", "kind": "county", "parentId": "loc-jinzhong" },
+    { "id": "loc-taigu-miao", "name": "太谷城南庙会戏台", "kind": "venue", "parentId": "loc-taigu" },
+    { "id": "loc-qx-stage", "name": "祁县昭馀古城戏台", "kind": "venue", "parentId": "loc-qixian" }
+  ],
+  "troupes": [
+    { "id": "troupe-jinyiban", "name": "锦艺班", "genreId": "g01", "baseLocationId": "loc-taigu", "activeFrom": "1946", "activeTo": "1960", "note": "太谷民营晋剧班社（样例）" },
+    { "id": "troupe-yunmen", "name": "云门班", "genreId": "g04", "baseLocationId": "loc-xinzhou", "activeFrom": "1950", "activeTo": "1958", "note": "北路梆子班社（样例）" }
+  ],
+  "plays": [
+    { "id": "play-dajinzhi", "genreId": "g01", "title": "打金枝", "synopsis": "唐代升平公主与郭暧的家事风波，晋剧代表剧目" },
+    { "id": "play-suanliang", "genreId": "g01", "title": "算粮", "synopsis": "王宝钏与薛平贵故事折子戏" },
+    { "id": "play-xueshouyin", "genreId": "g04", "title": "血手印", "synopsis": "北路梆子传统剧目" }
+  ],
+  "experts": [
+    { "id": "exp-ljk", "name": "李镜湖", "specialties": ["genre:g01", "field:history"], "note": "晋剧史研究（样例）" },
+    { "id": "exp-wfy", "name": "王汾雁", "specialties": ["genre:g01", "genre:g04", "field:history"], "note": "梆子戏史（样例）" },
+    { "id": "exp-zyn", "name": "赵砚农", "specialties": ["field:photo"], "note": "影像档案与底片鉴定（样例）" }
+  ],
+  "artists": [
+    {
+      "id": "artist-wangce",
+      "names": [
+        { "value": "王翠娥", "kind": "birth", "source": "太谷县档案馆户籍誊本（1982年抄）" },
+        { "value": "小电灯", "kind": "stage", "source": "1956年太谷县戏曲汇演节目单" },
+        { "value": "娥子", "kind": "nickname", "source": "2003年口述访谈录音A-17" },
+        { "value": "王翠英", "kind": "misrecord", "source": "1982年县志初稿人物卷" }
+      ],
+      "genreIds": ["g01"],
+      "troupeIds": ["troupe-jinyiban"],
+      "birthYear": 1921,
+      "deathYear": 2010,
+      "bio": "晋剧青衣，太谷锦艺班出身。（样例人物）"
+    },
+    {
+      "id": "artist-bolcui",
+      "names": [
+        { "value": "李翠仙", "kind": "birth", "source": "2011年家属口述" },
+        { "value": "玻璃翠", "kind": "stage", "source": "1959年晋中汇演剧照题签" }
+      ],
+      "genreIds": ["g01"],
+      "birthYear": null,
+      "bio": "晋剧旦角，行迹待考。（样例人物）"
+    },
+    {
+      "id": "artist-zhangys",
+      "names": [
+        { "value": "张砚生", "kind": "birth", "source": "忻州剧团档案" },
+        { "value": "张二魁", "kind": "stage", "source": "1953年忻县汇演海报" }
+      ],
+      "genreIds": ["g04"],
+      "troupeIds": ["troupe-yunmen"],
+      "birthYear": 1908,
+      "bio": "北路梆子须生。（样例人物）"
+    }
+  ],
+  "batches": [
+    { "id": "batch-2003-taigu", "title": "2003年太谷庙会晋剧演出拍摄", "shotAt": "2003-09", "photographer": "赵砚农", "locationId": "loc-taigu-miao", "genreIds": ["g01"], "note": "《晋戏》项目第一批数字化底片" },
+    { "id": "batch-2011-qixian", "title": "2011年祁县老艺人剧照与口述采集", "shotAt": "2011-04", "photographer": "赵砚农", "locationId": "loc-qx-stage", "genreIds": ["g01", "g04"], "note": "" }
+  ],
+  "images": [
+    {
+      "id": "img-tg-001",
+      "batchId": "batch-2003-taigu",
+      "negativeNo": "TG2003-001",
+      "capturedAt": "2003-09-14",
+      "scene": "stage",
+      "subjects": { "artistIds": ["artist-wangce"], "playId": "play-dajinzhi", "troupeId": "troupe-jinyiban", "locationId": "loc-taigu-miao" },
+      "original": { "fileRef": "negatives/2003-taigu/TG2003-001.tif", "hash": "sha256:9f2c1a7b4e6d8f0a2c4e6b8d0f2a4c6e", "registeredAt": "2004-03-02" },
+      "derivatives": [
+        { "kind": "web", "fileRef": "web/TG2003-001.jpg", "note": "展览用压缩稿" },
+        { "kind": "youth", "fileRef": "web/TG2003-001-youth.jpg", "note": "青少年版（背景观众面部已处理）" }
+      ],
+      "captions": [
+        {
+          "text": "晋剧《打金枝》剧照，王翠娥（艺名小电灯）饰升平公主。",
+          "uncertaintyNote": "拍摄日期依摄影师工作笔记，具体场次待核。",
+          "state": "released",
+          "reviewedBy": "exp-ljk",
+          "reviewNote": "与1956年节目单互证"
+        }
+      ],
+      "license": {
+        "scopes": { "exhibition": "allow", "publication": "allow", "research": "allow", "youth": "conditional" },
+        "conditions": { "youth": "仅可使用青少年版处理稿" },
+        "grantedBy": "archive-committee",
+        "note": "2005年授权，2019年复核"
+      }
+    },
+    {
+      "id": "img-tg-002",
+      "batchId": "batch-2003-taigu",
+      "negativeNo": "TG2003-001A",
+      "capturedAt": "2003-09-14",
+      "scene": "stage",
+      "subjects": { "artistIds": ["artist-wangce"], "playId": "play-dajinzhi", "troupeId": "troupe-jinyiban", "locationId": "loc-taigu-miao" },
+      "original": { "fileRef": "negatives/2003-taigu/TG2003-001A.tif", "hash": "sha256:aa11bb22cc33dd44ee55ff6600112233", "registeredAt": "2004-03-02" },
+      "captions": [
+        { "text": "同场连拍底片，画面与TG2003-001几乎一致。", "state": "draft" }
+      ]
+    },
+    {
+      "id": "img-qx-001",
+      "batchId": "batch-2011-qixian",
+      "negativeNo": "QX2011-006",
+      "capturedAt": "2011-04-02",
+      "scene": "backstage",
+      "subjects": { "artistIds": ["artist-bolcui"], "locationId": "loc-qx-stage" },
+      "original": { "fileRef": "negatives/2011-qixian/QX2011-006.tif", "hash": "sha256:bb22cc33dd44ee55ff66001122334455", "registeredAt": "2012-01-15" },
+      "captions": [
+        {
+          "text": "晋剧老艺人玻璃翠后台留影。",
+          "uncertaintyNote": "人物身份存争议，详见审定记录。",
+          "state": "released",
+          "reviewedBy": "exp-wfy",
+          "reviewNote": "身份未决，说明从简"
+        }
+      ],
+      "license": {
+        "scopes": { "exhibition": "allow", "publication": "deny", "research": "allow", "youth": "deny" },
+        "conditions": {},
+        "grantedBy": "archive-committee",
+        "note": "家属未授权出版与青少年传播"
+      }
+    },
+    {
+      "id": "img-qx-002",
+      "batchId": "batch-2011-qixian",
+      "negativeNo": "QX2011-009",
+      "capturedAt": "2011-04-03",
+      "scene": "stage",
+      "subjects": { "artistIds": ["artist-zhangys"], "playId": "play-xueshouyin", "troupeId": "troupe-yunmen" },
+      "original": { "fileRef": "negatives/2011-qixian/QX2011-009.tif", "hash": "sha256:cc33dd44ee55ff660011223344556677", "registeredAt": "2012-01-15" },
+      "captions": [
+        {
+          "text": "北路梆子《血手印》剧照，张砚生（艺名张二魁）主演。",
+          "state": "released",
+          "reviewedBy": "exp-wfy"
+        }
+      ],
+      "license": {
+        "scopes": { "exhibition": "allow", "publication": "allow", "research": "allow", "youth": "allow" },
+        "conditions": {},
+        "grantedBy": "archive-committee"
+      }
+    }
+  ],
+  "disputes": [
+    {
+      "id": "dis-identity",
+      "subjectType": "artist",
+      "subjectId": "artist-wangce",
+      "topic": "identity",
+      "note": "“小电灯”与“玻璃翠”是否同一人，口述与文献相左。",
+      "claims": [
+        {
+          "text": "小电灯即玻璃翠，本名王翠娥，1959年后改艺名。",
+          "source": { "type": "oral", "ref": "2003年王翠娥口述访谈录音A-17", "note": "本人自述" }
+        },
+        {
+          "text": "玻璃翠另有其人，本名李翠仙，与王翠娥同台不同人。",
+          "source": { "type": "document", "ref": "1959年晋中汇演剧照题签；2011年家属口述", "note": "题签与口述互证" }
+        }
+      ]
+    },
+    {
+      "id": "dis-birth-year",
+      "subjectType": "artist",
+      "subjectId": "artist-wangce",
+      "topic": "birth-year",
+      "note": "出生年份说法不一。",
+      "claims": [
+        { "text": "1921年生。", "source": { "type": "oral", "ref": "2003年口述访谈录音A-17" } },
+        { "text": "1924年生。", "source": { "type": "document", "ref": "1982年县志初稿人物卷" } }
+      ]
+    }
+  ]
+}
